@@ -1,6 +1,9 @@
+import 'dotenv/config';
 import express from "express";
+import moviesRouter from "./routes/movies.js"
+
 const app = express();
-const PORT = process.env.port || 3000;
+const PORT = process.env.pgport || 3000;
 
 // test route
 app.get("/", function (req, res) {
@@ -9,6 +12,10 @@ app.get("/", function (req, res) {
     message: "Test route up and running!",
   });
 });
+
+console.log(process.env.pgport);
+
+app.get("/movies", moviesRouter);
 
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);

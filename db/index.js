@@ -1,5 +1,4 @@
 import pg from "pg";
-import { database, port } from "pg/lib/defaults";
 
 export const pool = new pg.Pool ({
    user: process.env.PGUSER,
