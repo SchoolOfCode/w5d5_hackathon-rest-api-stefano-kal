@@ -15,7 +15,7 @@ app.get("/", function (req, res) {
 
 console.log(process.env.pgport);
 
-app.get("/movies", moviesRouter);
+app.use("/movies", moviesRouter);
 
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
